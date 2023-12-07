@@ -1,0 +1,63 @@
+default:
+    path: /
+    controller: App\Controller\DefaultController::default
+    
+usuario_vista_crearUsuario:
+    path: /usuario/crear-usuario
+    controller: App\Controller\UsuarioController::crearUsuario
+
+usuario_vista_mostrarUsuarios:
+    path: /usuario/mostrar-usuarios
+    controller: App\Controller\UsuarioController::mostrarUsuarios
+
+usuario_accion_save:
+    path: /usuario/crear
+    controller: App\Controller\UsuarioController::save
+
+usuario_vista_panelAdministrador:
+    path: /usuario/panel-administrador
+    controller: App\Controller\UsuarioController::panelAdministrador
+    
+usuario_vista_panelCliente:
+    path: /usuario/panel-cliente
+    controller: App\Controller\UsuarioController::panelCliente
+    
+usuario_vista_iniciarSesion:
+    path: /iniciar-sesion
+    controller: App\Controller\UsuarioController::iniciarSesion
+    
+usuario_accion_autenticarSesion:
+    path: /autenticar-sesion
+    controller: App\Controller\UsuarioController::autenticarSesion
+    
+usuario_accion_errorSesion:
+    path: /error-sesion
+    controller: App\Controller\UsuarioController::errorSesion
+    
+usuario_accion_cerrarSesion:
+    path: /cerrar-sesion
+    controller: App\Controller\UsuarioController::cerrarSesion
+    
+categoria_vista_crearCategoria:
+    path: /categoria/crear-categoria
+    controller: App\Controller\CategoriaController::crearCategoria
+
+categoria_vista_mostrarCategorias:
+    path: /categoria/mostrar-categorias
+    controller: App\Controller\CategoriaController::mostrarCategorias
+    
+categoria_accion_save:
+    path: /categoria/crear
+    controller: App\Controller\CategoriaController::save
+    
+producto_vista_crearProducto:
+    path: /producto/crear-producto
+    controller: App\Controller\ProductoController::crearProducto
+    
+producto_vista_mostrarProductos:
+    path: /producto/mostrar-productos
+    controller: App\Controller\ProductoController::mostrarProductos
+    
+producto_accion_save:
+    path: /producto/crear
+    controller: App\Controller\ProductoController::save

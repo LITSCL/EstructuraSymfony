@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello UsuarioController!{% endblock %}
+
+{% block body %}
+	<h1>Estas en Crear Usuario</h1>
+	
+	{{ form_start(formulario) }}
+	<table border="5px">
+		<tr>
+			<td>{{ form_label(formulario.rut) }}</td> <!-- Renderizando componente. -->
+			<td>{{ form_widget(formulario.rut) }}</td> <!-- Renderizando componente. -->
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.nombre) }}</td>
+			<td>{{ form_widget(formulario.nombre) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.apellido) }}</td>
+			<td>{{ form_widget(formulario.apellido) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.email) }}</td>
+			<td>{{ form_widget(formulario.email) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.clave) }}</td>
+			<td>{{ form_widget(formulario.clave) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.tipo) }}</td>
+			<td>{{ form_widget(formulario.tipo) }}</td>
+		</tr>
+	</table>
+	{{ form_widget(formulario.boton) }}
+	{{ form_end(formulario, {"render_rest": false}) }} <!-- El JSON indica que no se van a renderizar los componentes. -->
+	
+	{% for mensaje in app.session.flashbag().get("mensaje") %} <!-- Este bucle es obligatorio para recibir una sesion correctamente. -->
+		{% if mensaje == "Exitoso" %}
+			<strong class="alerta-verde">Usuario creado correctamente</strong>
+		{% elseif mensaje == "Fallido" %}
+			<strong class="alerta-roja">Error al crear el usuario</strong>
+		{% endif %}
+	{% endfor %}
+	
+	{% for errores in app.session.flashbag().get("errores") %} <!-- Este bucle es obligatorio para recibir una sesion correctamente. -->
+		<div class="listado-errores">
+			<ul>
+			{% for error in errores %}	
+				<li>{{ error }}</li>
+			{% endfor %}
+			</ul>
+		</div>
+	{% endfor %}
+{% endblock %}

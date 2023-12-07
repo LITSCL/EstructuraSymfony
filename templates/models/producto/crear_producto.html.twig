@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ProductoController!{% endblock %}
+
+{% block body %}
+	<h1>Estas en Crear Producto</h1>
+{{ form_start(formulario) }}
+	<table border="5px">
+		<tr>
+			<td>{{ form_label(formulario.codigo) }}</td> <!-- Renderizando componente. -->
+			<td>{{ form_widget(formulario.codigo) }}</td> <!-- Renderizando componente. -->
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.nombre) }}</td>
+			<td>{{ form_widget(formulario.nombre) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.precio) }}</td>
+			<td>{{ form_widget(formulario.precio) }}</td>
+		</tr>
+		<tr>
+			<td>{{ form_label(formulario.categoria) }}</td>
+			<td>{{ form_widget(formulario.categoria) }}</td>
+		</tr>
+	</table>
+	{{ form_widget(formulario.boton) }}
+	{{ form_end(formulario, {"render_rest": false}) }} <!-- El JSON indica que no se van a renderizar los componentes. -->
+	
+    {% for mensaje in app.session.flashbag().get("mensaje") %} <!-- Este bucle es obligatorio para recibir una sesion correctamente. -->
+		{% if mensaje == "Exitoso" %}
+			<strong class="alerta-verde">Producto creado correctamente</strong>
+		{% elseif mensaje == "Fallido" %}
+			<strong class="alerta-roja">Error al crear el producto</strong>
+		{% endif %}
+	{% endfor %}
+{% endblock %}

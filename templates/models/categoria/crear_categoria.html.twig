@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoriaController!{% endblock %}
+
+{% block body %}
+	<h1>Estas en Crear Categoria</h1>
+{{ form_start(formulario) }}
+	<table border="5px">
+		<tr>
+			<td>{{ form_label(formulario.nombre) }}</td> <!-- Renderizando componente. -->
+			<td>{{ form_widget(formulario.nombre) }}</td> <!-- Renderizando componente. -->
+		</tr>
+	</table>
+	{{ form_widget(formulario.boton) }}
+	{{ form_end(formulario, {"render_rest": false}) }} <!-- El JSON indica que no se van a renderizar los componentes. -->
+	
+	{% for mensaje in app.session.flashbag().get("mensaje") %} <!-- Este bucle es obligatorio para recibir una sesion correctamente. -->
+		{% if mensaje == "Exitoso" %}
+			<strong class="alerta-verde">Categoria creada correctamente</strong>
+		{% elseif mensaje == "Fallido" %}
+			<strong class="alerta-roja">Error al crear la categoria</strong>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
