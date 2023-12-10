@@ -11,7 +11,7 @@ class CrearCategoriaType extends AbstractType
     public function buildForm($builder, $options)
     {
         $builder->setMethod("POST")
-        ->add("nombre", TextType::class, ["label" => "Nombre"])
-        ->add("boton", SubmitType::class, ["label" => "Crear"]);
+            ->add("nombre", TextType::class, ["label" => "Nombre"])
+            ->add("boton", SubmitType::class, ["label" => "Crear"]);
     }
 }

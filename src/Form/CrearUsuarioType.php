@@ -13,12 +13,12 @@ class CrearUsuarioType extends AbstractType
     public function buildForm($builder, $options)
     {
         $builder->setMethod("POST")
-        ->add("rut", TextType::class, ["label" => "Rut", "attr" => ["placeholder" => "19.757.106-3"]])
-        ->add("nombre", TextType::class, ["label" => "Nombre"])
-        ->add("apellido", TextType::class, ["label" => "Apellido"])
-        ->add("email", EmailType::class, ["label" => "Email"])
-        ->add("clave", PasswordType::class, ["label" => "Clave"])
-        ->add("tipo", TextType::class, ["label" => "Tipo"])
-        ->add("boton", SubmitType::class, ["label" => "Crear"]);
+            ->add("rut", TextType::class, ["label" => "Rut", "attr" => ["placeholder" => "19.757.106-3"]])
+            ->add("nombre", TextType::class, ["label" => "Nombre"])
+            ->add("apellido", TextType::class, ["label" => "Apellido"])
+            ->add("email", EmailType::class, ["label" => "Email"])
+            ->add("clave", PasswordType::class, ["label" => "Clave"])
+            ->add("tipo", TextType::class, ["label" => "Tipo"])
+            ->add("boton", SubmitType::class, ["label" => "Crear"]);
     }
 }

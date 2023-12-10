@@ -30,10 +30,10 @@ class CrearProductoType extends AbstractType
         }
         
         $builder->setMethod("POST")
-        ->add("codigo", TextType::class, ["label" => "Codigo"])
-        ->add("nombre", TextType::class, ["label" => "Nombre"])
-        ->add("precio", TextType::class, ["label" => "Precio"])
-        ->add("categoria", ChoiceType::class, ["label" => "Categoria", "choices" => $array])
-        ->add("boton", SubmitType::class, ["label" => "Crear"]);
+            ->add("codigo", TextType::class, ["label" => "Codigo"])
+            ->add("nombre", TextType::class, ["label" => "Nombre"])
+            ->add("precio", TextType::class, ["label" => "Precio"])
+            ->add("categoria", ChoiceType::class, ["label" => "Categoria", "choices" => $array])
+            ->add("boton", SubmitType::class, ["label" => "Crear"]);
     }
 }

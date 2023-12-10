@@ -7,10 +7,10 @@
 
 	{% if app.user and app.user.tipo == "Administrador" %}
 		<br/><h1>Bienvenido Administrador</h1>
-		<a href="{{ path('usuario_accion_cerrarSesion') }}">Cerrar Sesión</a>
-	{% elseif app.user and app.user.tipo == "Cliente"%}
+		<a href="{{ path('usuario_accion_cerrarSesion') }}">Cerrar SesiÃ³n</a>
+	{% elseif app.user and app.user.tipo == "Cliente" %}
 		<br/><h1>Bienvenido Cliente</h1>
-		<a href="{{ path('usuario_accion_cerrarSesion') }}">Cerrar Sesión</a>
+		<a href="{{ path('usuario_accion_cerrarSesion') }}">Cerrar SesiÃ³n</a>
 	{% else %}
 		<br><h1>No hay sesiones activas</h1>
 	{% endif %}
